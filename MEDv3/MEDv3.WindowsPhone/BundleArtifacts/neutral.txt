@@ -1,0 +1,2 @@
+MainPackage=C:\Users\dev\Source\Repos\medv3Repo\MEDv3\MEDv3\MEDv3.WindowsPhone\bin\Release\MEDv3.WindowsPhone_1.0.0.1_Bundle\MEDv3.WindowsPhone_1.0.0.1_AnyCPU.appx
+ResourcePack=C:\Users\dev\Source\Repos\medv3Repo\MEDv3\MEDv3\MEDv3.WindowsPhone\bin\Release\MEDv3.WindowsPhone_1.0.0.1_Bundle\MEDv3.WindowsPhone_1.0.0.1_scale-100.appx

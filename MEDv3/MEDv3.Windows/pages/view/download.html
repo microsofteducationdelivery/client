@@ -1,0 +1,25 @@
+﻿<div class="b_download-tpl" data-win-control="WinJS.Binding.Template" style="display: none">
+    <div class="b_download-tpl--item">
+        <div class="b_download-tpl--item--box">
+            <img src="#" class="b_download-tpl--item--box__image" data-win-bind="src: id MED.Download.preview" />
+        </div>
+        <input class="b_download-tpl__id" data-win-bind="name: id" style="display: none;">
+        <div class="b_download-tpl--item__content">
+            <div class="b_download-tpl--item__title">
+                <span data-win-bind="textContent: title"></span>
+            </div>
+            <div data-win-bind="style.width: progress MED.Download.getWidth; className: progress MED.Download.getBarClass">
+                <span data-win-bind="textContent: progress MED.Download.getPercent"></span>
+            </div>        
+        </div>  
+    </div>
+</div>
+
+<div id="downloads-list" data-win-control="WinJS.UI.ListView"
+     data-win-options="{
+                    itemTemplate: select('.b_download-tpl'),
+                    selectionMode: 'none',
+                    swipeBehavior: 'none',
+                    layout: { type: WinJS.UI.GridLayout, orientation: 'vertical' }}">
+
+</div>

@@ -1,0 +1,13 @@
+﻿body {
+	background-color: #1a6265;
+	font-family: 'segoe ui';
+}
+
+progress {
+    position: absolute;
+    width: 100%;
+}
+
+#appbar {
+    background-color: #1a6265;
+}

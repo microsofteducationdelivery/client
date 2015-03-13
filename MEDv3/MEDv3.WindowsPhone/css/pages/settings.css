@@ -1,0 +1,54 @@
+﻿.b-settings {
+	background-color: #dcdcdc;
+    overflow-x: scroll;
+    height: 100%;
+}
+.b-settings-item {
+    background-color: white;
+    width: 95%;
+    margin: 10px auto;
+
+}
+
+.b-settings-toggle {
+    padding: 10px;
+}
+
+.b-settings-toggle .win-title {
+    color: black;
+    float: left;
+    font-size: 17pt;
+    line-height: 46px;
+}
+
+.b-settings-toggle .win-label {
+    color: #1a6265;
+    text-align: right;
+    padding-right: 5px; 
+}
+
+.b-settings-toggle.win-toggleswitch .win-switch {
+    padding: 0;
+    border: solid gray 2px;
+}
+
+.b-settings-toggle.win-toggleswitch .win-switch::-ms-thumb {
+    background-color: grey;
+    border-color: white;
+}
+
+.b-settings-toggle.win-toggleswitch .win-switch::-ms-fill-lower {
+    background-color: #1a6265;
+}
+
+
+
+.b-settings-toggle .win-toggleswitch .win-switch::-ms-fill-upper {
+    background-color: red;
+
+}
+
+.b-settings-toggle .win-toggleswitch .win-switch::-ms-fill-lower {
+    background-color: red;
+
+}

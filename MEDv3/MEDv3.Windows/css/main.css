@@ -1,0 +1,54 @@
+﻿.b_main {
+	width: 100%;
+	top: 0;
+	left: 0;
+	background-color: #1a6465;
+}
+.hidden {
+    display: none;
+}
+.b_main--logo {
+	margin-left: 30px;
+    margin-top: 20px;
+    float: left;
+}
+.b_view-wrapper {
+    width: 100%;
+    background-color: #e0e2e2;
+    height: 100%;
+}
+.b_motd {
+    display: inline-block;
+    width: 100%;
+    line-height: 40px;
+    text-align: right;
+    background-color: #593c56;
+}
+.b_motd-msg {
+    position: relative;
+    font-size: 18pt;
+    animation: motd 10s linear 1s infinite;
+}
+#progress {
+    top: 20px;
+    position: absolute;
+}
+@keyframes motd {
+    0% {right: 0;}
+    100% {right: 100%;}
+}
+.b_main--logout, .b_refresh {
+    float: right;
+    max-width: 30px !important;
+    height: 50px;
+    background-color: rgba(0,0,0,0) !important;
+    border: none;
+    
+    margin-top: 30px;
+}
+.b_main--logout {
+    font-size: 23pt;
+}
+.b_refresh {
+    font-size: 17pt;
+}

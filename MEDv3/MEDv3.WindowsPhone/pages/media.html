@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>MED_v2</title>
+    <link href="/css/pages/fragments/libraries.css" rel="stylesheet" />
+    <link href="/css/pages/media.css" rel="stylesheet" />
+
+    <script src="/js/pages/media.js"></script>
+
+</head>
+<body>
+    <h1 data-win-bind="textContent: title"></h1>
+    <div class="b-library">
+        <div class="b-media-content">
+            <video data-win-bind="style.display: subtype MED.Pages.ViewHelpers.Media.isVideo" autoplay controls></video>
+            <img data-win-bind="style.display: subtype MED.Pages.ViewHelpers.Media.isImage" class="b-media-image" />
+            <div data-win-bind="style.display: subtype MED.Pages.ViewHelpers.Media.isText" class="b-media-text"></div>
+        </div>
+        <hr />
+        <h4>Comments</h4>
+        <div class="b-comments-container" data-win-control="WinJS.UI.Repeater">
+            <div>
+                <div class="b-comments__item" data-win-bind="style.display: question">
+                    <span class="b-comments__date" data-win-bind="textContent: date">02.04.2014</span>
+                    <h5 data-win-bind="textContent: author">Ana</h5>
+                    <span class="b-comments__text" data-win-bind="textContent: text">I never knew prime numbers were so interesting</span>
+                </div>
+                <div class="b-comments__reply" data-win-bind="style.display: answer">
+                    <span class="b-comments__date" data-win-bind="textContent: date">02.04.2014</span>
+                    <h5 data-win-bind="textContent: author">Ana</h5>
+                    <span class="b-comments__text" data-win-bind="textContent: text">I never knew prime numbers were so interesting</span>
+
+                </div>
+
+            </div>
+            <hr />
+        </div>
+        <div class="b-comment-send hidden">
+            <input type="text" class="b-new-comment" style="margin-left: 10px; width: 95vw; ">
+            <button class="b-send" style="	background-color: #7bb846; margin-left:10px;">Send comment</button>
+        </div>
+    </div>      
+</body>
+</html>

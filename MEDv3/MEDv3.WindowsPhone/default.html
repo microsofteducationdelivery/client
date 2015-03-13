@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <title>MED_v2</title>
+
+    <!-- Ссылки WinJS -->
+    <!-- Во время выполнения ui-themed.css разрешается в ui-themed.light.css или ui-themed.dark.css 
+    в зависимости от установленной у пользователя темы. Это часть функциональности загрузки ресурсов MRT. -->
+    <link href="/css/ui-themed.css" rel="stylesheet" />
+    <script src="//Microsoft.Phone.WinJS.2.1/js/base.js"></script>
+    <script src="//Microsoft.Phone.WinJS.2.1/js/ui.js"></script>
+
+    <!-- Ссылки MED_v2 -->
+    <script src="/js/navigator.js"></script>
+
+    <script src="/js/services/settings.js"></script>
+    <script src="/js/services/secureSettings.js"></script>
+    <script src="/js/services/server.js"></script>
+    <script src="/js/services/downloads.js"></script>
+    <script src="/js/services/progressbar.js"></script>
+    <script src="/js/services/localStorage.js"></script>
+
+    <script src="/js/services/help.js"></script>
+    
+    <script src="/js/pages/login.js"></script>
+    <script src="/js/pages/pivot.js"></script>
+
+
+    <link href="/css/default.css" rel="stylesheet" />
+    <script src="/js/default.js"></script>
+</head>
+<body class="phone">
+    <progress id="progress" style="visibility: hidden;"></progress>
+    <div id="contenthost"></div>
+    <div id="appbar" data-win-control="WinJS.UI.AppBar">
+        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'btn-descr', label:'Description', icon:'page'}" type="button"></button>
+        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'btn-links', label:'Links', icon:'link'}" type="button"></button>
+        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'btn-help', label:'Help', icon:'help'}" type="button"></button>
+        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'btn-delete', label:'Delete', icon:'delete'}" type="button"></button>
+        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'btn-sync', label:'Sync', icon:'sync'}" type="button"></button>
+        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'btn-settings', label:'Settings', icon:'settings'}" type="button"></button>
+        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'btn-logout', label:'Logout', icon:'closepane'}" type="button"></button>
+    </div>
+</body>
+</html>

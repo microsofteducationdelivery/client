@@ -1,0 +1,14 @@
+﻿<div class="b_view-wrapper"> 
+    <div class="b_downloads">
+        <h1>Libraries</h1>
+        <div class="b_downloads--navbar" data-win-control="WinJS.UI.Repeater" data-win-options="{data: Libraries.links}">
+            <a class="b_downloads--navbar__link" data-win-bind="innerHTML: title; href: page"></a>
+        </div>
+        <div class="b_libraries--path" data-win-control="WinJS.UI.Repeater" data-win-options="{data: MED.Library.path}">
+            <div class="b_libraries--path--container"> <a class="b_libraries--path__link" data-win-bind="textContent: title; href: id"></a> <span class="b_libraries--path__arrow"> > </span> </div>
+        </div>
+        <div class="b_libraries--list">
+
+        </div>
+    </div> 
+</div>

@@ -1,0 +1,20 @@
+﻿.b_navigation {
+    float: right;
+}
+.b-navigation__link {
+    color: white;
+    width: auto;
+    font-size: 24pt;
+    border-top: 3px solid rgba(0, 0, 0, 0);
+    margin-left: 10px;
+    display: inline-block;
+    font-family: 'segoe ui symbol';
+    padding: 10px;
+    padding-top: 30px;
+}
+.b_icon {
+    font-family: 'segoe ui symbol';
+}
+.b-navigation__link-active {
+    border-top: 3px solid #6ab01c;
+}
