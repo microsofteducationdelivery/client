@@ -1,0 +1,78 @@
+﻿<div class="full-width">
+    <div class="progress-container">
+        <div class="progress-wrapper">
+            <div class="progress-part progress-part1"></div>
+            <div class="progress-part progress-part2"></div>
+            <div class="progress-part progress-part3"></div>
+            <div class="progress-part progress-part4"></div>
+            <div class="progress-part progress-part1"></div>
+            <div class="progress-part progress-part2"></div>
+            <div class="progress-part progress-part3"></div>
+            <div class="progress-part progress-part4"></div>
+        </div>
+    </div>
+    <div class="splitView" data-win-control="WinJS.UI.SplitView" data-win-options="{
+            openedDisplayMode: 'overlay',
+            closedDisplayMode: 'inline',
+            panePlacement: 'right'
+         }">
+        <div class="b_main-split">
+            <div class="b_main-split-header">
+                <button class="b_main--menu-button win-splitviewpanetoggle"
+                        data-win-control="WinJS.UI.SplitViewPaneToggle"
+                        data-win-options="{ splitView: select('.splitView') }"></button>
+            </div>
+            <div class="b_main-nav-commands">
+                <div data-win-control="WinJS.UI.SplitViewCommand" class="action-nav" data-url="/pages/fragments/home.html" data-win-options="{ label: 'Home', icon: 'home'}"></div>
+                <div data-win-control="WinJS.UI.SplitViewCommand" class="action-nav" data-url="/pages/fragments/libraries.html"  data-win-options="{ label: 'Libraries', icon: 'world'}"></div>
+                <div data-win-control="WinJS.UI.SplitViewCommand" class="action-nav" data-url="/pages/fragments/downloads.html" data-win-options="{ label: 'Downloads', icon: 'download'}"></div>
+                <div data-win-control="WinJS.UI.SplitViewCommand" class="action-sync" data-win-options="{ label: 'Sync', icon: 'sync'}"></div>
+                <div data-win-control="WinJS.UI.SplitViewCommand" class="action-logout" data-win-options="{ label: 'Logout', icon: 'contact'}"></div>
+
+            </div>
+        </div>
+        <header class="b_main" aria-label="Header content" role="banner">
+            <button class="b_main--split-view win-splitviewpanetoggle"
+                    data-win-control="WinJS.UI.SplitViewPaneToggle"
+                    data-win-options="{ splitView: select('.splitView') }">
+            </button>
+        </header>
+        <div id="contenthost" data-win-control="Application.PageControlNavigator" data-win-options="{home: '/pages/fragments/home.html'}" class="b-page"></div>
+    </div> 
+
+    <!-- templates -->
+    <div class="b_library-tpl" id="lib-tpl" data-win-control="WinJS.Binding.Template" style="display: none">
+        <div class="b_library-tpl--item">
+            <div class="b_library-tpl--item__path">
+                <span data-win-bind="textContent: title"></span>
+            </div>
+            <input class="b_library-tpl__id" data-win-bind="name: id" style="display: none;" />
+            <div class="b_library-tpl--item__folder">
+                <span class="b_icon">&#xe1a1</span> <span>items: </span> <span data-win-bind="textContent: itemsCount"></span>
+            </div>
+            <div data-win-bind="className: id Libraries.getFavorite">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="b_media-tpl" id="media-tpl" data-win-control="WinJS.Binding.Template" style="display: none">
+        <div class="b_media-tpl--item">
+            <div class="b_media_tpl_img">
+                <img class="b_media-tpl--img" data-win-bind="src:preview" />
+            </div>
+            <input class="b_media-tpl__id" data-win-bind="name: id" style="display: none;" />
+            <div class="b_media-tpl--item__texts">
+                <div class="b_media-tpl--item__title">
+                    <span data-win-bind="textContent: title"></span>
+                </div>
+                <div class="b_media-tpl--item__status">
+                    <span data-win-bind="textContent: id Libraries.getStatus"></span>
+                </div>
+            </div>
+            <div data-win-bind="className: id Libraries.getFavorite">
+
+            </div>
+        </div>
+    </div>
+</div>

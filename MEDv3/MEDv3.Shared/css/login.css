@@ -1,0 +1,63 @@
+﻿.b-login {
+    overflow: auto;
+    align-self: center;
+    margin: auto;
+    width: 50%;
+    min-width: 320px;
+    color: black;
+}
+
+
+
+.b-login-image {
+	width: 30vw;
+    min-width: 320px;
+	margin-bottom: 60px;
+    margin: 0 auto 60px auto;
+	display: block;
+}
+
+.b-login form {
+	color: white;
+	font-size: 24px;
+}
+
+.b-login input {
+	display: block;
+	width: 100%;
+    margin: 20px 0;
+
+    font-size: 24px;
+	height: 60px;
+	color: black;
+    background-color: #f1f1f1;
+    outline: none;
+    border: none;
+    padding-left: 10px;
+}
+
+.b-login input:-ms-input-placeholder {
+    color: #404041;
+}
+
+
+.b-login button {
+	box-sizing: border-box;
+    font-size: 24px;
+	width: 100%;
+    height: 60px;
+    font-weight: 400;
+    color: white;
+    text-align: center;
+	background-color: #7ab83a;
+    border: none;
+    outline: none;
+}
+
+.b-login button:disabled {
+	background-color: gray;	
+}
+
+.b-login__button-wrapper {
+	margin-top: 40px;
+}

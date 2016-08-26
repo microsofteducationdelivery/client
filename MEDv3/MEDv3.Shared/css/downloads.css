@@ -1,0 +1,103 @@
+﻿.b_downloads {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    height: 100%;
+}
+.b_downloads--navbar {
+    margin-top: 15px;
+    margin-left: 5px;
+    margin-bottom: 20px;
+    display: inline-block;
+    border-bottom: 2px solid white;
+    width: 100%;
+}
+.b_downloads--navbar__link {
+    color: black;
+    margin-right: 20px;
+    font-size: 18pt;
+}
+.b_downloads--navbar__link-active {
+    border-bottom: 5px solid  #593c56;   
+    color: #593c56;
+}
+
+@media (max-width: 768px) {
+    .b_download-tpl--item {
+        width: calc(100vw - 100px) !important;
+    }
+}
+
+
+
+.b_download-tpl--item {
+	width: 40vw;
+	background-color: white;
+	color: black;
+}
+.b_download-tpl {
+	
+}
+.b_download-tpl--item--box {
+	float: left;
+}
+.b_download-tpl--item--box__image {
+	height: 65px;
+	display: block;
+	max-width: 200px;
+	margin-right: 30px;
+}
+.downloads-list {
+}
+.b_download-tpl--item__title {
+	font-size: 18pt;
+    height: 30px;
+}
+.b_download-tpl--item__title span {
+	text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    display: block;
+}
+.b_download-tpl--item__percent-bar {
+	background-color: #6ab01c;
+	color: white;
+	margin-top: 3px;
+	display: inline-block;
+	font-size: 14pt;
+	padding: 3px 8px;
+    min-width: 10%;
+	text-align: center;
+}
+.b_download-tpl--item__complete-bar {
+    color: transparent;
+	display: inline;
+}
+.b_download-tpl--item__complete-bar:after {
+	font-family: 'segoe ui symbol';
+	content: 'Complete';
+	position: relative;
+	left: -38px;
+	background-color: white;
+	color: #6ab01c;
+	font-size: 16pt
+
+}
+#downloads-list {
+	height:  60vh;
+}
+.b_downloads--cancel_all {
+    float: right;
+    margin-top: 30px;
+    color:  #7ab83a;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.b_downloads__title {
+    float: left;
+    color: #f64d2f;
+}

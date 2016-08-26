@@ -1,0 +1,61 @@
+﻿<div class="b_popup-wrapper hidden">
+    <div class="b_media--comments--box">
+        <div class="b_media--comments--box__title">Leave a comment</div>
+        <textarea class="b_media--comments--box__input" maxlength="250" rows="4" cols="50"></textarea>
+        <button class="b_media--comments--box__send-btn">send</button>
+    </div>
+</div>
+<div class="b_media">
+    <div class="b_pallet" data-win-bind="style.display: subtype MED.Pages.ViewHelpers.Media.isVideo">
+        <img class="b_media__leftBtn brush" data-win-bind="src: color MED.Pages.ViewHelpers.Media.getBackgroundUrl" id="seslectColorBrush" data-tool="brush">
+
+        <button class="b_media__leftBtn eraser" id="eraser" data-tool="eraser"></button>
+
+        <div class="row">
+            <ul class="colorList" data-pallet="color" data-win-control="WinJS.UI.Repeater" data-win-options="{data: MED.Pages.ViewHelpers.Media.colors}">
+                <li data-win-bind="style.backgroundColor: color; color: color"></li>
+
+            </ul> 
+            <ul class="sizeList" data-pallet="size" data-win-control="WinJS.UI.Repeater" data-win-options="{data: MED.Pages.ViewHelpers.Media.sizes}">
+                <li data-win-bind="style.width: style; style.height: style; style.borderRadius: style; size: size"></li>
+            </ul>
+        </div>
+
+        <button class="b_media__rightBtn save" id="save" data-tool="save"></button>
+
+    </div>
+    <div class="b_media--media">
+        <button data-win-control="WinJS.UI.BackButton"></button>
+        <div class="b_media--media__title">Video</div>
+        <span class="b_media--media__description"> some long long test description for test</span>
+        <div class="b-media--media--content">
+            <video class="b-media__video" data-win-bind="style.display: subtype MED.Pages.ViewHelpers.Media.isVideo" controls>
+
+
+            </video>
+            <button class="play_btn hidden">Play Video</button>
+            <img data-win-bind="style.display: subtype MED.Pages.ViewHelpers.Media.isImage" class="b-media-image" />
+            <div data-win-bind="style.display: subtype MED.Pages.ViewHelpers.Media.isText" class="b-media-text"></div>
+        </div>
+    </div>
+    <div class="b_media--comments">
+        <div class="b_media--comments__title">Comments</div>
+        <div class="b_media--comments--area" data-win-control="WinJS.UI.Repeater">
+            <div class="b-comments__item"
+                 data-win-bind="style.marginLeft: reply MED.Pages.ViewHelpers.Media.getMargin;
+                   style.borderLeft: reply MED.Pages.ViewHelpers.Media.getBorder;
+                   style.width: reply MED.Pages.ViewHelpers.Media.getWidth">
+
+                <span class="b-comments__date" data-win-bind="textContent: date">02.04.2014</span>
+                <h5 class="b-comments__author" data-win-bind="textContent: author"></h5>
+                <span class="b-comments__text" data-win-bind="textContent: text"></span>
+            </div>
+        </div>
+        <footer class="b_media--comments--footer hidden">
+            <hr>
+            <button class="b_media--comments--footer__btn">Leave a comment</button>
+        </footer>
+
+    </div>
+    
+</div>

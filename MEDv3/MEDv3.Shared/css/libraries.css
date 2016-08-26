@@ -1,0 +1,146 @@
+﻿.b_library-tpl--item {
+	background-color: white;
+	color: black;
+	height: 100%;
+	width: 19vw;
+    min-width: 320px;
+}
+
+@media (max-width: 768px) {
+    .b_library-tpl--item {
+        width: calc(100vw - 60px) !important;
+    }
+    .b_media-tpl--item {
+        width: calc(100vw - 60px) !important;
+    }
+}
+
+.b_home--libraries .win-itembox .win-template.win-disposable.win-item, .b_libraries--list .win-itembox .win-template.win-disposable.win-item {
+    height: 100%;
+}
+
+.b_media-tpl--item {
+    background-color: white;
+    padding-top: 3px;
+	color: black;
+	width: 19vw;
+    height: 65px;
+    display: flex;
+}
+
+#libraries-list {
+	height: 60vh;
+}
+.b_media_tpl_img {
+    height: 65px;
+    width: 105px;
+    flex-shrink: 0;
+}
+.b_media_tpl_img img {
+    max-width: 105px;
+    height: 65px;
+}
+.b_media-tpl--item__title {
+    box-sizing: border-box;
+    height: 35px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.b_media-tpl--item .b_library-tpl--item__star {
+    float: none;
+    flex-shrink: 0;
+    top: 11px;
+}
+
+.b_library-tpl--item__path, .b_media-tpl--item__title {
+    padding-left: 3px;
+    font-size: 18pt;
+    color: #1a6465;
+
+}
+
+.b_libraries--path {
+    margin-bottom: 10px;
+}
+
+.b_media-tpl--item__texts {
+    flex: 1;
+    padding-left: 5px;
+}
+
+.b_library-tpl--item__path span {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 90%;
+    display: inline-block;
+}
+.b_media-tpl--item__title span {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 95%;
+    display: inline-block;
+}
+.b_downloads--navbar.hidden {
+    display: none;
+}
+.b_library-tpl--item__star {
+	float: right;
+	font-size: 20pt;
+	position: relative;
+	left: -10px;
+	top: -20px;
+	color:  #ffb63f;
+    font-family: 'segoe ui symbol'
+}
+.favorite:after {
+    content: '\e0b4';
+}
+.unfavorite:after {
+    content: '\e224';
+}
+
+.b_library-tpl--item__folder {
+	padding-left: 10px;
+	color:  #593c56;
+	margin-top: 10px;
+	display: inline-block
+}
+
+.b_libraries h1 {
+    color: #f64d2f;
+    font-size: 36px;
+    margin: 0 auto 0 5px;
+}
+
+
+.b_libraries--path--container {
+    display: inline;
+
+}
+.b_libraries--path__link {
+    color: #1a6465;
+    font-size: 14pt;
+}
+.b_libraries--path__arrow {
+    color:  #593c56;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 14pt;
+}
+.b_libraries--path :last-child > .b_libraries--path__arrow {
+    display: none;
+}
+.b_libraries--path :first-child > .b_libraries--path__link {
+    color: #404041;
+    font-size: 18px;
+}
+.b_libraries--path :first-child > .b_libraries--path__link::before {
+    font-family: 'segoe ui symbol';
+    content: '\e188';
+    position: relative;
+    top: 2px;
+    margin-right: 5px;
+}

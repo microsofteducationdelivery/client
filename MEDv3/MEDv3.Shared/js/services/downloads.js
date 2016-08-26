@@ -5,6 +5,7 @@
     var promises = {};
     var downloader = new Windows.Networking.BackgroundTransfer.BackgroundDownloader();
     var list;
+    var currList;
     var updating = false;
     var prefix;
 
@@ -38,7 +39,7 @@
         return download[action]().then(function () {
             downloads[id].completed = true;
             downloads[id].progress = 1;
-            MED.Downloads.list.dataSource.change(id, downloads[id]);
+            list.dataSource.change(id, downloads[id]);
             return MED.LocalStorage.setItem('downloads-list', JSON.stringify(downloads)).then(function () {
                 delete promises[prefix + '-' + id];
             });
@@ -47,8 +48,11 @@
             console.log('e');
             delete promises[prefix + '-' + id];
         }, function (p) {
+            if (!downloads[id]) {
+                return;
+            }
             downloads[id].progress = p.progress.bytesReceived / p.progress.totalBytesToReceive;
-            MED.Downloads.list.dataSource.change(id, downloads[id]);
+            list.dataSource.change(id, downloads[id]);
         });
 
     };
@@ -57,8 +61,11 @@
         var me = this;
         currentServerId = MED.Settings.get('currentServerId');
         prefix = MED.LocalStorage.getPrefix();
+
         list = new WinJS.Binding.List();
+        MED.Downloads.list = list;
         list.push = push;
+        currList = list;
         MED.LocalStorage.getItem('downloads-list').done(function (data) {
             downloads = JSON.parse(data) || {};
             list.dataSource.beginEdits();
@@ -66,19 +73,20 @@
             for (var id in downloads) {
                 if (!downloads[id].completed) {
                     downloads[id].progress = 0;
+                    list.push(downloads[id]);
                 }
-                list.push(downloads[id]);
             }
             list.dataSource.endEdits();
 
 
             Windows.Networking.BackgroundTransfer.BackgroundDownloader.getCurrentDownloadsAsync().done(function (downloadsList) {
                 downloadsList.forEach(function (download) {
-                    var id = download.resultFile.displayName.substr(prefix.length + 1);
+                    var id = download.resultFile.displayName.substr(prefix.length);
                     if (downloads[id]) {
                         _processDownload(id, download, 'attachAsync');
                     } else {
                         //download.
+                        var r = 0;
                     }
                 });
             });
@@ -124,7 +132,7 @@
                 Windows.Storage.FileIO.writeBytesAsync(file, new Uint8Array(array));
             });
 
-            Windows.Storage.ApplicationData.current.localFolder.createFileAsync(prefix + '-' + id + '.' + data.subtype, Windows.Storage.CreationCollisionOption.replaceExisting).then(function (file) {
+            Windows.Storage.ApplicationData.current.localFolder.createFileAsync(prefix + id + '.' + data.subtype, Windows.Storage.CreationCollisionOption.replaceExisting).then(function (file) {
                 var download = downloader.createDownload(uri, file);
                 return _processDownload(id, download, 'startAsync');
             })
@@ -208,9 +216,21 @@
                 resultList = getList(false);
                 break;
             default:
-                resultList = list;
+                resultList = getAllList();
         }
         return resultList;
+    }
+    var getAllList = function () {
+        var result = [];
+
+        for (var i in downloads) {
+            result.push(downloads[i]);
+        }
+        list.splice(0, list.length);
+        result.forEach(function (item) {
+            list.push(item);
+        });
+        return list;
     }
     var getList = function (isDownloaded) {
         var result = [];
@@ -221,7 +241,11 @@
             }
         }
 
-        return new WinJS.Binding.List(result);
+        list.splice(0, list.length);
+        result.forEach(function (item) {
+            list.push(item);
+        });
+        return list;
     }
     function sendComment(id, comment) {
         var server = localStorage.getItem('currentServer');
@@ -235,6 +259,10 @@
                     'Authorization': 'bearer ' + token
 
                 }
+            }).then(function (responce) {
+                return responce;
+            }, function (err) {
+                console.log(err);
             });
         });
     }

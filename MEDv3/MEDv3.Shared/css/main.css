@@ -1,0 +1,132 @@
+﻿.b_main--split-view {
+    display: none;
+}
+
+.full-width {
+    width: 100%;
+    height: 100%;
+}
+
+.b_main {
+    flex-direction: row;
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    top: 0px;
+    left: 0px;
+    height: 115px;
+    background-image: url('/images/Logo-main.png');
+    background-size: auto 90%;
+    background-position: 2% center;
+    background-repeat: no-repeat;
+}
+
+.hidden {
+    display: none;
+}
+
+.b_main--logo {
+	margin-left: 30px;
+    margin-top: 20px;
+    float: left;
+}
+.b_view-wrapper {
+    width: 100%;
+    height: 100%;
+}
+.b_motd {
+    display: inline-block;
+    width: 100%;
+    line-height: 40px;
+    height: 40px;
+    text-align: right;
+    background-color: #593c56;
+}
+.b_motd-msg {
+    position: relative;
+    font-size: 18pt;
+    animation: motd 10s linear 1s infinite;
+    color: white;
+    white-space: nowrap;
+}
+#progress {
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    position: fixed;
+}
+@keyframes motd {
+    0% {right: 0;}
+    100% {right: 100%;}
+}
+
+.b_main--logout, .b_refresh {
+    width: 50px !important;
+    height: 50px;
+    background-color: rgba(0,0,0,0) !important;
+    border: none;
+    align-self: center;
+}
+
+.b_main--logout {
+    font-size: 23pt;
+}
+.b_refresh {
+    font-size: 17pt;
+}
+
+@media (max-width: 800px) {
+    .b_main--logout {
+        display: none;
+    }
+    .b_refresh {
+        display: none;
+    }
+
+    .b_main--split-view {
+        display: block;
+    }
+}
+
+.b_main-split-header {
+    text-align: right;
+}
+
+.b_main-nav-commands {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.b_main-nav-commands .action-sync {
+    margin-top: auto;
+}
+
+.b_main-nav-commands .win-splitviewcommand-label {
+    font-size: 24px;
+    line-height: normal;
+    overflow: visible;
+
+}
+
+.b_main-nav-commands .win-splitviewcommand-button-content {
+    height: auto !important;
+}
+
+.b_main-nav-commands .win-splitviewcommand-icon {
+    line-height: 32px !important;
+    margin-right 5px !important;
+}
+
+.b_main-split {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.win-backbutton, .win-back, .win-navigation-backbutton {
+    display: inline-block;
+    float: left;
+    background-color: transparent;
+}

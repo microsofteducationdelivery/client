@@ -1,0 +1,115 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+a, a:hover, a:visited {
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.hidden {
+    display: none;
+}
+
+#contenthost {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.fragment {
+    /* Определить таблицу со строками для баннера и основной части */
+    -ms-grid-columns: 1fr;
+    -ms-grid-rows: 128px 1fr;
+    display: -ms-grid;
+    height: 100%;
+    width: 100%;
+}
+
+    .fragment header[role=banner] {
+        /* Определить таблицу со столбцами для кнопки "Назад" и заголовка страницы. */
+        -ms-grid-columns: 37px 83px 1fr;
+        -ms-grid-rows: 1fr;
+        display: -ms-grid;
+    }
+
+        .fragment header[role=banner] .win-navigation-backbutton {
+            -ms-grid-column: 2;
+            margin-top: 57px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .fragment header[role=banner] .titlearea {
+            -ms-grid-column: 3;
+            margin-top: 37px;
+        }
+
+            .fragment header[role=banner] .titlearea .pagetitle {
+                width: calc(100% - 20px);
+            }
+
+    .fragment section[role=main] {
+        -ms-grid-row: 2;
+        height: 100%;
+    }
+
+
+@keyframes progress-animate {
+  0%   {left: -100%;}
+  100%  {left: 0%;}
+}
+
+.progress-container {
+  width: 100vw;
+  position: relative;
+  top: 0;
+  height: 8px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+
+.progress-wrapper {
+  height: 100%;
+  width: 200%;
+  position: absolute;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+
+}
+
+.inProgress .progress-wrapper {
+  animation-name: progress-animate;
+}
+
+.progress-part {
+  width: 12.5%;
+  height: 100%;
+  display: block;
+  float: left;
+}
+
+.progress-part1 {
+  background-color: #f24821;
+}
+
+.progress-part2{
+  background-color: #83bf03;
+}
+
+.progress-part3{
+  background-color: #2ebaf2;
+}
+
+.progress-part4 {
+  background-color: #f29f04;
+}

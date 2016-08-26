@@ -2,11 +2,11 @@
     "use strict";
 
     function show() {
-        document.getElementById('progress').style.visibility = 'visible';
+        document.querySelector('.progress-container').classList.add('inProgress');
     }
 
     function hide() {
-        document.getElementById('progress').style.visibility = 'hidden';
+        document.querySelector('.progress-container').classList.remove('inProgress');
     }
 
     WinJS.Namespace.define("MED.ProgressBar", {

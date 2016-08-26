@@ -42,52 +42,12 @@
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).props" />
   <PropertyGroup>
-    <DefaultLanguage>ru-RU</DefaultLanguage>
+    <DefaultLanguage>en-US</DefaultLanguage>
   </PropertyGroup>
   <ItemGroup>
     <AppxManifest Include="package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <Content Include="css\default.css" />
-    <Content Include="css\pages\fragments\libraries.css" />
-    <Content Include="css\pages\login.css" />
-    <Content Include="css\pages\media.css" />
-    <Content Include="css\pages\pivot.css" />
-    <Content Include="css\pages\settings.css" />
-    <Content Include="css\phone.css" />
-    <Content Include="default.html" />
-    <Content Include="images\logo-toolbar.png" />
-    <Content Include="images\logo.png" />
-    <Content Include="images\SplashScreen.scale-100.png" />
-    <Content Include="images\SplashScreen.scale-240.png" />
-    <Content Include="images\Square150x150Logo.scale-240.png" />
-    <Content Include="images\Square44x44Logo.scale-240.png" />
-    <Content Include="images\Square71x71Logo.scale-240.png" />
-    <Content Include="images\StoreLogo.scale-240.png" />
-    <Content Include="images\Wide310x150Logo.scale-240.png" />
-    <Content Include="js\pages\description.js" />
-    <Content Include="js\pages\fragments\downloads.js" />
-    <Content Include="js\pages\fragments\libraries.js" />
-    <Content Include="js\pages\library.js" />
-    <Content Include="js\pages\links.js" />
-    <Content Include="js\pages\login.js" />
-    <Content Include="js\pages\main.js" />
-    <Content Include="js\pages\media.js" />
-    <Content Include="js\pages\pivot.js" />
-    <Content Include="js\pages\settings.js" />
-    <Content Include="css\ui-themed.css" />
-    <Content Include="css\ui-themed.theme-dark.css" />
-    <Content Include="css\ui-themed.theme-light.css" />
-    <Content Include="pages\description.html" />
-    <Content Include="pages\fragments\downloads.html" />
-    <Content Include="pages\fragments\libraries.html" />
-    <Content Include="pages\library.html" />
-    <Content Include="pages\links.html" />
-    <Content Include="pages\login.html" />
-    <Content Include="pages\main.html" />
-    <Content Include="pages\media.html" />
-    <Content Include="pages\pivot.html" />
-    <Content Include="pages\settings.html" />
   </ItemGroup>
   <ItemGroup>
     <SDKReference Include="Microsoft.Phone.WinJS.2.1, Version=1.0" />

@@ -8,7 +8,36 @@
     var ui = WinJS.UI;
 
     app.addEventListener("activated", function (args) {
-        if (args.detail.kind === activation.ActivationKind.launch) {
+        if (args.detail.kind == Windows.ApplicationModel.Activation.ActivationKind.protocol) {
+            var contentHost = document.getElementById('contenthost');
+            var helpBtn = document.getElementById('btn-help');
+            if (helpBtn) {
+                helpBtn.addEventListener('click', function () {
+                    MED.Help.show();
+                });
+
+            }
+
+            var token = MED.Settings.get('token');
+            if (!token) {
+                MED.Settings.set('loggedIn', false);
+            }
+
+            var loginContent = document.getElementById('contenthost')
+
+            if (loginContent && loginContent.winControl) {
+                loginContent.winControl.dispose();
+            }
+            contentHost.innerHTML = '';
+            if (JSON.parse(MED.Settings.get('loggedIn'))) {
+                MED.LocalStorage.init();
+                return WinJS.UI.Pages.render('/pages/main.html', contentHost, {}).then(function ok() {
+                    return nav.navigate(nav.location || Application.navigator.home, nav.state);
+                });
+            } else {
+                return WinJS.UI.Pages.render('/pages/login.html', contentHost, {});
+            }
+        } else if (args.detail.kind === activation.ActivationKind.launch) {
             if (args.detail.previousExecutionState !== activation.ApplicationExecutionState.terminated) {
 
                 // TODO: Это приложение было вновь запущено. Инициализируйте
@@ -62,7 +91,7 @@
             });
 
             args.setPromise(p);
-        }
+        } 
     });
 
     app.oncheckpoint = function (args) {
